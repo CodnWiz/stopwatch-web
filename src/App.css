@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.time {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  padding: 15px 25px;
+  border-radius: 8px;
+  min-width: 100px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.button:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.button:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+.button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.startButton {
+  background-color: #4CAF50;
+}
+
+.stopButton {
+  background-color: #CCCCCC;
+}
+
+.stopButtonActive {
+  background-color: #FF0000 !important;
+}
+
+.resetButton {
+  background-color: #FF9800;
+}
+
+/* Updated responsive design - buttons stay horizontal on mobile */
+@media (max-width: 600px) {
+  .time {
+    font-size: 36px;
+  }
+  
+  .buttons {
+    flex-direction: row; /* Changed from column to row */
+    flex-wrap: nowrap; /* Prevent wrapping to new line */
+    gap: 10px; /* Smaller gap on mobile */
+  }
+  
+  .button {
+    min-width: 80px; /* Slightly smaller on mobile */
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .buttons {
+    gap: 8px;
+  }
+  
+  .button {
+    min-width: 70px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
